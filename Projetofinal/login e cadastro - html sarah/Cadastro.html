@@ -75,6 +75,12 @@
       const NIF = document.getElementById("NIF").value;
       const CPF = document.getElementById("CPF").value;
       const cargoInput = document.getElementById("cargoInput").value;
+      const primeiroNumero = parseInt(NIF.charAt(0));
+
+      if (primeiroNumero < 5 && cargo === "administrador") {
+        alert("NIF não permitido para cadastro como administrador.");
+        return; 
+      }
 
       try {
         const codigo = Math.floor(Math.random() * 10000);
@@ -96,3 +102,4 @@
 
 </body>
 </html>
+
